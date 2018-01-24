@@ -13,22 +13,21 @@ newpic.size(function(err, value){
                 fontColor:"yellow",
                 x:0,
                 y:0,
-                text:"aha",
-                direction:"East"
+                text:"你在說什麼？",
+                direction:"East",
+                fontFile:"./NotoSerifCJKtc-hinted/NotoSerifCJKtc-Medium.otf"
         }        
         newpic.fontSize(drawing.fontSize).fill(drawing.fontColor);
         if (drawing.fontFile) {
                 newpic.font(drawing.fontFile);
         }
-        newpic.gravity(drawing.direction).drawText(drawing.x, drawing.y, drawing.text)
-        .gravity('SouthEast').drawText(drawing.x, drawing.y, drawing.text)
-        .write('./tt_out.png', function (err) {
-        if (!err) console.log('done');
-        });
+        newpic.gravity(drawing.direction)
+                .drawText(drawing.x, drawing.y, drawing.text)
+                .gravity('SouthEast').drawText(drawing.x, drawing.y, drawing.text)
+                .write('./tt_out_2.png', function (err) {
+                        if (!err) console.log('done');
+                });
 
 
 
 }) 
-//pic.drawings.forEach(function(drawing) {
-
-//})
